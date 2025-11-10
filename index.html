@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>GłównySzlakBeskidzki</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <link rel="icon" href="logo.png" type="image/png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Pierwsza zabawa z JavaScriptem-->
+        <script>
+            let number = Math.floor(Math.random()*11);
+            function showMessage()
+            {
+                let userNumber = document.getElementById("userNumber").value;
+                let message;
+
+                if (userNumber > Number)
+                {
+                    message = "Jest na pewno mniej niedźwiedzi na szlaku";
+                }
+                else if (userNumber < number)
+                {
+                    message = "Trochę więcej niedźwiedzi na szlaku";
+                }
+                else
+                {
+                    message = "Gratulacje, uważaj na nie!";
+                }
+                document.getElementById("message").innerHTML = message;
+            }
+
+            function changeCss()
+            {
+                if (localStorage.click_count)
+                {
+                    localStorage.click_count = Number(localStorage.click_count) + 1;
+                    if (localStorage.click_count % 2 == 0)
+                    {
+                        document.getElementById('zamiana_kolorów').style.color='#6f0808ab';
+                        document.getElementById('zamiana_kolorów').style.background='white';
+                        document.getElementById('zamiana_kolorów').style.fontSize="24px";            
+                    }
+                    else
+                    {
+                        document.getElementById('zamiana_kolorów').style.color='black';
+                        document.getElementById('zamiana_kolorów').style.background='#3c423da9';
+                        document.getElementById('zamiana_kolorów').style.fontSize="20px";
+                    }
+                }
+                else 
+                {
+                    localStorage.click_count = 1;
+                }
+            }
+            
+        </script>
+    </head>
+
+    <body id="zamiana_kolorów">
+        
+        <header>
+            <h1>Główny Szlak Beskidzki</h1>
+            <button type="button" id ="przycisk_zmień" onclick="changeCss()">Zmień Styl</button>
+        </header>
+        
+        <nav>
+            <img src="gsb_znak.png" class="gsb_znak" alt="gsb_znak"/>
+            <h3>MENU</h3>
+            <ul>
+                <li><a href="#" target="_self">Strona Główna</a></li>
+                <li><a href="Trasa.html" target="_self">Trasa</a></li>
+                <li><a href="galeria.html" target="_self">Galeria</a></li>
+                <li><a href="kontakt.html" target="_self">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <h4>Główny Szlak Beskidzki:</h4>
+                <p>
+                    <strong>Główny Szlak Beskidzki</strong>, często nazywany "GSB",
+                    to jeden z najważniejszych i najpopularniejszych szlaków turystycznych w Beskidach,
+                    które są pasmem górskim w Polsce i Czechach. Główny Szlak Beskidzki przyciąga zarówno
+                    doświadczonych turystów górskich, jak i początkujących, oferując im możliwość odkrycia
+                    piękna beskidzkiej przyrody, malowniczych krajobrazów oraz tradycji regionalnych. 
+                </p>
+                <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+                <h4>Trasa i charakterystyka:</h4>
+                <p>
+                    Główny Szlak Beskidzki (GSB) to trasa turystyczna o długości około 500 kilometrów, 
+                    która przecina różne pasma górskie w Beskidach, tworząc niesamowitą przygodę dla 
+                    turystów i miłośników gór. Poniżej rozwijam temat trasy, uwzględniając szczegóły na 
+                    niektórych etapach:<br>
+
+                    <u>Beskid Śląski</u>: Główny Szlak Beskidzki rozpoczyna się zwykle w Czechach, w Beskidzie Śląskim. 
+                    Ten odcinek charakteryzuje się gęstymi lasami, stromymi stokami i pięknymi widokami na 
+                    Beskid Śląski. Przechodzenie granicy czesko-polskiej jest często pierwszym wyzwaniem na trasie.<br>
+
+                    <u>Beskid Żywiecki</u>: Kolejny etap prowadzi przez Beskid Żywiecki, 
+                    znany ze swoich majestatycznych szczytów, w tym Babia Góra, która 
+                    jest najwyższym szczytem tego pasma. W Beskidzie Żywieckim turystom 
+                    towarzyszą malownicze jeziora górskie, jak Żywieckie i Międzybrodzkie.<br>
+
+                    <u>Beskid Mały</u>: Następnie GSB przenosi się do Beskidu Małego, który jest bardziej łagodny 
+                    w porównaniu do poprzednich obszarów. Na tym etapie turysta może zrelaksować się na 
+                    malowniczych łąkach i w lesie, ciesząc się spokojem i ciszą tego rejonu.<br>
+
+                    <u>Beskid Wyspowy</u>: Trasa Głównego Szlaku Beskidzkiego kontynuuje podróż przez Beskid Wyspowy, 
+                    znany ze swojej pięknej panoramy. To miejsce, gdzie wędrówka staje się bardziej stroma 
+                    i wymagająca. Warto odwiedzić szczyt Mogielicę, z którego rozciągają się zapierające 
+                    dech w piersiach widoki na Tatry i całe okoliczne tereny.<br>
+
+                    <u>Beskid Sądecki</u>: Ostatni etap GSB prowadzi przez Beskid Sądecki, który zachwyca 
+                    swoją dziką i malowniczą przyrodą. Szlak prowadzi turystów przez gęste lasy i 
+                    przez pasma górskie, z wieloma przepięknymi widokami na okolicę.<br>
+
+                    <u>Północno-zachodnie Karpaty</u>: Po ukończeniu Głównego Szlaku Beskidzkiego, 
+                    niektórzy wędrowcy kontynuują swoją podróż na północ, eksplorując dalsze 
+                    obszary Beskidów, takie jak Bieszczady i Karpaty. To rozszerzenie trasy 
+                    oferuje kolejne niezapomniane doświadczenia.<br>
+                <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+                <h4>Poziom trudności:</h4>
+                <p>
+                    Główny Szlak Beskidzki ma różny stopień trudności, w zależności od odcinka. 
+                    Niektóre fragmenty są stosunkowo łatwe i dostępne dla początkujących turystów, 
+                    podczas gdy inne wymagają doświadczenia i kondycji fizycznej. 
+                    Warto dokładnie zaplanować trasę i dostosować ją do swoich umiejętności.<br>
+                    Aby bezpiecznie i efektywnie pokonywać Główny Szlak Beskidzki, warto korzystać 
+                    z przewodnika turystycznego specjalizującego się w Beskidach. Taki przewodnik 
+                    może dostarczyć cennych informacji na temat trasy, warunków pogodowych, miejsc 
+                    noclegowych i innych praktycznych aspektów. Ponadto, przewodnicy posiadają 
+                    wiedzę na temat bezpieczeństwa w górach i potrafią radzić sobie w sytuacjach 
+                    kryzysowych. Dla wielu turystów górskich korzystanie z przewodnika może 
+                    zwiększyć pewność siebie i komfort podczas wędrówek po GSB.
+                    Przewodnicy oferujący wycieczki po Głównym Szlaku Beskidzkim 
+                    są często dobrze wykształceni i posiadają lokalną wiedzę, 
+                    która pomaga poznać region, jego historię i kulturę. Ich doświadczenie 
+                    jest cennym wsparciem dla osób, które po raz pierwszy wędrują po tych malowniczych górach.
+                </p>
+                <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+                <h4>Infrastruktura:</h4>
+                <p>
+                    Oznakowanie szlaku: GSB jest dobrze oznakowany, co ułatwia nawigację dla wędrowców. 
+                    Czerwono-białe znaki i oznakowania kierują turystów wzdłuż trasy, umożliwiając im 
+                    bezpieczne przemieszczanie się przez górskie obszary.<br>
+
+                    <u>Schroniska górskie</u>: Jednym z kluczowych elementów infrastruktury na GSB są schroniska 
+                    górskie. Schroniska to miejsca, gdzie wędrowcy mogą przenocować, odpocząć, zjeść ciepły 
+                    posiłek i napić się czegoś gorącego. Schroniska na Głównym Szlaku Beskidzkim oferują 
+                    różne standardy zakwaterowania, od prostych schronów turystycznych po komfortowe 
+                    schroniska z pełnym wyżywieniem.<br>
+
+                    <u>Schrony turystyczne</u>: Oprócz schronisk, na GSB znajdują się również schrony turystyczne. 
+                    Są to mniejsze, bardziej podstawowe miejsca do przenocowania, często wyposażone w kuchnię, 
+                    ale bez oferty gastronomicznej. Są one doskonałym rozwiązaniem dla turystów, którzy 
+                    wolą gotować własne posiłki.<br>
+
+                    <u>Miejsca biwakowe</u>: Dla tych, którzy preferują dziką kampową atmosferę, 
+                    GSB oferuje również wiele miejsc biwakowych. To obszary, gdzie można 
+                    rozstawić namiot i spędzić noc pod gołym niebem. Zazwyczaj w pobliżu 
+                    tych miejsc znajdują się źródła wody pitnej i toalety.<br>
+
+                    <u>Punkty informacyjne</u>: W wielu miejscach na trasie znajdują się punkty informacyjne, 
+                    gdzie turyści mogą uzyskać pomoc w planowaniu swojej wędrówki, dowiedzieć się o 
+                    warunkach pogodowych oraz zaktualizować swoje informacje o trasie.<br>
+
+                    <u>Mapy i przewodniki</u>: Istnieją specjalne mapy oraz przewodniki po Głównym Szlaku 
+                    Beskidzkim, które dostarczają szczegółowych informacji na temat trasy, punktów 
+                    noclegowych i atrakcji na trasie. Warto korzystać z tych źródeł, aby dokładnie 
+                    zaplanować swoją wędrówkę.<br>
+                </p>
+                <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+        </section>
+
+        <section>
+            <form>
+                <h5>Zgadnij liczbę niedźwiedzi na szlaku</h5>
+                <input type="text" id="userNumber">
+                <p id="message"></p>
+                <button type="button" onclick="showMessage()">Sprawdź, czy zgadłem</button>
+            </form>
+        </section>
+
+        <svg class="rysunek" viewBox="0 0 200 200" width="100px" height="100px" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" fill="white" r="78" stroke="black" stroke-width="3" />
+            <rect x="60" y="0" width="80" height="40" fill="black" />
+            <rect x="10" y="20" width="180" height="30" fill="black" />
+            <circle cx="61" cy="82" r="12" />
+            <circle cx="127" cy="82" r="12" />
+            <path d="m136.81 116.53c.69 26.17-64.11 42-81.52-.73" style="fill:none; stroke: black; stroke-width: 3;" />
+            <rect x="30" y="0" width="10" height="180" fill="#470b0b" />
+        </svg>
+
+        <a href="#" class="go-top">Wróc do początku</a>
+        <footer>
+            <p>
+                Strona powstała w celach projektu na Politechnice Gdańskiej
+                Made by: Karol Banach
+            </p>
+        </footer>
+        
+    </body>
+</html>

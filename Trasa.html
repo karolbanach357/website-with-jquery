@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>GłównySzlakBeskidzki</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <link rel="icon" href="logo.png" type="image/png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui.css">
+        <script src="jquery-ui.js"></script>
+        <script>
+            function przelicznik()
+            {
+                const cnt = document.querySelector("selector");
+                var opis = document.getElementsByName('opis')[0].value;
+                var a = document.getElementsByName('a')[0].value;
+                var b = document.getElementsByName('b')[0].value;
+
+                var wynik = punkty(parseInt(a), parseInt(b));
+
+                var elem = document.createElement('table');
+                var tekst = document.createTextNode(opis+": "+wynik+" punktów GOTu.");
+
+                elem.appendChild(tekst);
+                elem.style.background="white";
+                elem.style.borderStyle="double";
+                elem.style.margin="10px";
+               
+                document.getElementById("wynik").appendChild(elem);
+
+                function punkty(a,b)
+                {
+                    a = Math.floor(a);
+                    b = Math.floor(b/100);
+                    return a+b;
+                }
+            }
+        
+            $( function() {
+                $( "#dialog" ).dialog(
+                {
+                autoOpen: false,
+                show: 
+                {
+                effect: "blind",
+                duration: 1000
+                },
+                hide: 
+                {
+                duration: 1000
+                }
+                }
+                );
+    
+            $( "#opener" ).on( "click", function() {
+                $( "#dialog" ).dialog( "open" );
+                });
+            } );
+            
+            
+            const successCallback = (position) => 
+            {
+                console.log(position);
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                wspolczedna_a = document.getElementById("latitude");
+                wspolrzedna_b = document.getElementById("longitude");
+                wspolczedna_a.style.color="#6f0808ab";
+                wspolrzedna_b.style.color="#6f0808ab";
+                wspolczedna_a.textContent = latitude;
+                wspolrzedna_b.textContent = longitude;
+            };
+
+            const errorCallback = (error) => 
+            {
+                console.log(error);
+                wspolczedna_a = document.getElementById("latitude");
+                wspolrzedna_b = document.getElementById("longitude");
+                wspolczedna_a.style.color="#6f0808ab";
+                wspolrzedna_b.style.color="#6f0808ab";
+                wspolczedna_a.textContent = "Nie ma dostępu";
+                wspolrzedna_b.textContent = ":(";
+            };
+
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        </script>
+            
+    </head>
+
+    <body>
+        <header>
+            <h1>Główny Szlak Beskidzki</h1>
+        </header>
+
+        <nav>
+            <img src="gsb_znak.png" class="gsb_znak" alt="gsb_znak"/>
+            <h3>MENU</h3>
+            <ul>
+                <li><a href="index.html" target="_self">Strona Główna</a></li>
+                <li><a href="#" target="_self"> Trasa</a></li>
+                <li><a href="galeria.html" target="_self">Galeria</a></li>
+                <li><a href="kontakt.html" target="_self">Kontakt</a></li>
+                <li><button id="opener">Open Dialog</button></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <img src="mapaszlaku.jpg" class="mapaszlaku" alt="mapaszlaku"/>
+            <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+            <p>
+                Za przejście Głównego Szlaku Beskidzkiego w czasie 21 dni lub krótszym można uzyskać diamentową odznakę.
+                Wystarczy zbierać do książeczki pieczątki ze schronisk, sklepów czy agroturystyk,
+                a później przesłać ją do weryfikacji. Po regulamin odznaki, adres do wysyłki i 
+                listę zdobywców odsyłamy na stronę Centralnego Ośrodka Turystyki Górskiej PTTK w Krakowie.<br>
+                Poniżej w tabeli znajduję się najbardziej optymalna trasa przejścia Głównego szlaku Beskidzkiego,
+                aby zdobyć diamentową odznakę. Oczywiście można podzielić sobię trasę na parę wypadów, jednak jeśli
+                masz wystarczająco dużo czasu to zachęcam do przejścia ciągiem.<br>
+                <b>Uwaga!</b> - Bez odpowiedniego przygotowania i ćwiczeń wyprawa może zakończyć się niepowodzeniem. 
+                Zalecam się upewnić czy dany szlak nie będzie za trudny.
+            </p>
+        </section>
+        <section>
+            <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+            <p>Warto również odwiedzić poniższe strony przed wyruszeniem na szlak:</p>
+                <ul>
+                    <li><a href="https://outhorn.com/jak-spakowac-plecak-w-gory,15,69" target="_blank">Jak dobrze spakować pleacak</a></li>
+                    <li><a href="http://walbrzyska.gopr.pl/zasady-poruszania/" target="_blank">Zasady poruszania się po górach</a></li>
+                    <li><a href="https://www.sport-shop.pl/blog/najpiekniejsze-szlaki-w-beskidach-w-jakie-trasy-warto-sie-wybrac/#Najpiekniejsze-szlaki-w-Beskidach-%E2%80%93-7-najlepszych-tras" target="_blank">Inne popularne trasy w beskidach</a></li>
+                </ul>
+        </section>
+        <section>
+            <div id="tabela">
+                <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+                <table>
+                <caption><strong>Najważniejsze etapy GSB:</strong></caption>
+                <tr>
+                    <td>DZIEŃ</td>
+                    <td>ETAP ODCINKA</td>
+                    <td>DŁUGOŚĆ</td>
+                    
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Ustroń -  Schronisko na Soszowie</td>
+                    <td>16,3km</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Schronisko na Soszowie - Hala Barania</td>
+                    <td>24,7km</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Hala Barania - Schronisko PTTK na Rysiance</td>
+                    <td>28,4km</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Schronisko PTTK na Rysiance - Mędralowa</td>
+                    <td>25km</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>Mędralowa - Schronisko PTTK na Hali Krupowej</td>
+                    <td>23,8km</td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td>Schronisko PTTK na Hali Krupowej - Rabka-Zdrój</td>
+                    <td>32,9km</td>
+                </tr>
+                <tr>
+                    <td>7.</td>
+                    <td>Rabka-Zdrój - Studzionki</td>
+                    <td>26,6km</td>
+                </tr>
+                <tr>
+                    <td>8.</td>
+                    <td>Studzionki - Krościenko nad Dunajcem</td>
+                    <td>20,2km</td>
+                </tr>
+                <tr>
+                    <td>9.</td>
+                    <td>Krościenko nad Dunajcem - Rytro, Sucha Struga</td>
+                    <td>29km</td>
+                </tr>
+                <tr>
+                    <td>10.</td>
+                    <td>Rytro, Sucha Struga - Krynica-Zdrój</td>
+                    <td>31,2km</td>
+                </tr>
+                <tr>
+                    <td>11.</td>
+                    <td>Krynica-Zdrój - Baza noclegowa w Regietowie</td>
+                    <td>28,8km</td>
+                </tr>
+                <tr>
+                    <td>12.</td>
+                    <td>Baza noclegowa w Regietowie - Bartne</td>
+                    <td>19,2km</td>
+                </tr>
+                <tr>
+                    <td>13.</td>
+                    <td>Bartne - Chyrowa</td>
+                    <td>34,5km</td>
+                </tr>
+                <tr>
+                    <td>14.</td>
+                    <td>Chyrowa - Rymanów-Zdrój</td>
+                    <td>26,3km</td>
+                </tr>
+                <tr>
+                    <td>15.</td>
+                    <td>Rymanów-Zdrój - Puławy Górne</td>
+                    <td>12km</td>
+                </tr>
+                <tr>
+                    <td>16.</td>
+                    <td>Puławy Górne - Komańcza</td>
+                    <td>27km</td>
+                </tr>
+                <tr>
+                    <td>17.</td>
+                    <td>Komańcza - Cisna</td>
+                    <td>30,7km</td>
+                </tr>
+                <tr>
+                    <td>18.</td>
+                    <td>Cisna - Smerek</td>
+                    <td>16,5km</td>
+                </tr>
+                <tr>
+                    <td>19.</td>
+                    <td>Smerek - Ustrzyki Górne</td>
+                    <td>24,4km</td>
+                </tr>
+                <tr>
+                    <td>20.</td>
+                    <td>Ustrzyki Górne - Wołosate</td>
+                    <td>21,9km</td>
+                </tr>
+                </table>
+                <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+            </div>
+        </section>
+
+        <div id="dialog" title="Basic dialog">
+            <p>
+                93 godziny i 44 minuty - to nowy rekord Głównego Szlaku Beskidzkiego, 
+                czyli najdłuższego szlaku w polskich górach. W takim czasie 511 kilometrów 
+                z Ustronia do Wołosatego przebiegł ultramaratończyk Roman Ficek.
+            </p>
+        </div>
+
+        <section>
+            <p>Jeżeli nie możesz się odnaleźć na szlaku tutaj masz swoje kordy: <span id="latitude"></span> <span id="longitude"></span></p>
+            <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+        </section>
+
+        <section>
+            Odcinek trasy:
+            <input name="opis" type="text"/>
+            <br>
+            Ilość kilometrów przebytych:
+            <input name="a" type="text"/>
+            <br>
+            Ile metrów przewyższenia:
+            <input name="b" type="text"/>
+            <br>
+            <button type="button" onclick="przelicznik();" >Ile punktów GOTu</button>
+            <div id="wynik"></div>
+
+            <hr style="height: 10px; background: #6f0808ab; border: 0px;">
+        </section>
+        <a href="#" class="go-top">Wróc do początku</a>
+        <footer>
+            <p>
+                Strona powstała w celach projektu na Politechnice Gdańskiej
+                Made by: Karol Banach
+            </p>
+        </footer>
+    </body>
+</html>

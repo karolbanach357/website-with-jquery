@@ -1,0 +1,265 @@
+body
+{
+    background-color: #3c423da9;
+    font-size: 20px;
+    color: black;
+}
+h1
+{
+    font-size: 60px;
+    color: rgba(255, 255, 255, 0.756);    
+    font-family: Arial;
+    border: 15px;
+    border-style: double;
+    background-color: #6f0808ab;
+    margin-top: 0%;
+    text-align: center;
+}
+
+#przycisk_zmień
+{
+    float:right;
+    margin-left: 1%;
+    background-color: rgba(255, 255, 255, 0.756);
+    margin-bottom: 1%;
+    padding-top: 0%;
+}
+#przycisk_zmień:hover
+{
+    cursor: pointer;
+}
+
+p::first-letter
+{
+    color:#6f0808fa;
+    font-size: 30px ;
+}
+
+nav
+{
+    float: left;
+    text-align: left;
+    font-size: 25px;
+    width: 18%;
+    list-style: none;
+    color:white;
+    background-color:#6f0808ab;
+}
+nav > ul > li > a
+{
+    color: white;
+}
+
+h3
+{
+    text-align: center;
+}
+.gsb_znak
+{
+    width: 80%;
+    height: auto;
+    padding: 5%;
+}
+
+
+.mapaszlaku
+{
+    margin-left: 5%;
+    height: 80%;
+    width: 90%;
+}
+
+.rysunek
+{
+    float: right;
+}
+
+section
+{
+    padding-left: 20%;
+    padding-right: 5%;
+}
+
+section > ul > li > a
+{
+     color: black;
+}
+
+section > ul > li > a:hover
+{
+    cursor: pointer;
+    color: white;
+}
+
+section > ul > li > a:link
+{
+    color:#6f0808ab;
+}
+
+#tabela
+{
+    width: 100%;
+    text-align: center;
+}
+table tr td
+{
+    border: 3px;
+    border-style:solid;
+}
+table
+{
+    margin-left: 18%;
+}
+
+footer
+{
+    height:50px;
+	background:#6f0808ab;
+	color:#FFF;
+	text-align:center;
+	margin-top:10px;
+	padding:5px;
+    margin-bottom: 0%;
+}
+.go-top{
+	font-size: 20px;
+    color: black;
+    margin-left: 50%;
+    border: 3px;
+    border-style:groove;
+    text-align: center;
+}
+.go-top:hover
+{
+    background-color: #6f0808a4;
+    color:#ffffff98;
+}
+
+form 
+{
+    width: 100%;
+    margin-bottom: 5%;
+}
+form div.wiersz
+{
+    width: 50%;
+    margin: auto;
+    padding: 8px;
+}
+form label
+{
+    width: 30%;
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
+form input, form select, form textarea
+{
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+}
+form input[type="checkbox"]
+{
+    left: 30%;
+    width: auto;
+}
+form span
+{
+    left: 30%;
+}
+form input[type="submit"]
+{
+    width: 120px;
+    background: #6f0808a4;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+form input[type="reset"] 
+{
+        width: 80px;
+        background: #6f0808a4;
+        border: none;
+        color: white;
+        cursor: pointer;
+}
+form div.wiersz:last-of-type
+{
+    text-align:center;
+}
+
+#wszystkie_zdjęcia
+{
+    text-align: center;
+}
+
+.zdjęcie
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 45%;
+    width: 30%;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    transform: rotate(5deg);
+    transition: 0.3s all ease-in-out;
+    will-change: transform;
+}
+
+.zdjęcie:hover 
+{
+    opacity: 1;
+    transform: scale(2);
+    background-color: black;
+}
+
+figure > img
+{
+    width: 60%;
+    height: auto;
+}
+
+#progressbar 
+{
+    margin-top: 20px;
+}
+ 
+.progress-label 
+{
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+}
+ 
+.ui-dialog-titlebar-close 
+{
+    display: none;
+}
+
+
+@media only screen and (max-width: 975px) {
+    nav {width:90%; text-align:center; float:none; padding-left:5%;padding-right: 5%; font-size: 30px;}
+    nav ul li {display: inline;}
+    nav h3 {display: none;}
+    nav ul li::after {content: " |";}
+    nav img {display: none;}
+    .mapaszlaku {width: 80%; height: auto;}
+    section{padding-left: 5%; padding-right: 5%;}
+    footer {text-align: left;}
+    .go-top {margin-left: 0%;}
+    .rysunek {display: none;}
+    .zdjęcie{margin-left: 30%;}
+ }
+
+ @media only screen and (max-width: 700px) {
+    nav {width:90%; text-align:center; float:none; padding-left:5%;padding-right: 5%; font-size: 30px;}
+    nav ul li::after {content: none;}
+    nav h3 {display: none;}
+    nav img {display: none;}
+    section{padding-left: 5%; padding-right: 5%;}
+    footer {text-align: left;}
+    .go-top {margin-left: 0%;}
+ }
